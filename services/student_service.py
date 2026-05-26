@@ -15,8 +15,7 @@ class Service:
             program = stud.program,
             DOB = stud.DOB,
             batch = stud.batch,
-            email = stud.email,
-            hashed_password = hash(stud.password)
+            email = stud.email
         )
         if db.query(Student).filter(Student.email == student.email).first():
             raise HTTPException(409,"Student email already registered")
